@@ -65,9 +65,9 @@ let Game = {
     }
 };
 
-export function create(players, maxPoints, startPlayer, clientApi) {
+export function create(players, maxPoints, startPlayer, clientApi, shuffleSeed) {
     let game = Object.create(Game);
-    game.deck = Deck.create();
+    game.deck = Deck.create(shuffleSeed);
     players.forEach(player => {
         game.deck.deal(player, 9);
     });

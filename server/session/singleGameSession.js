@@ -213,7 +213,7 @@ const Session = {
 
     gameCycle(nextStartingPlayer = this.getNextStartingPlayer()) {
         let players = this.players.slice();
-        let game = Game.create(players, this.maxPoints, this.players[nextStartingPlayer], this.clientApi);
+        let game = Game.create(players, this.maxPoints, this.players[nextStartingPlayer], this.clientApi, this.startingPlayer*924358690);
 
         return game.start().then(() => {
             let pointsTeamA = this.teams[0].points;

@@ -1,6 +1,4 @@
-
-
-import _ from 'lodash';
+import * as shuffleseed from "shuffle-seed";
 import {CardColor} from './../../../shared/deck/cardColor';
 import * as Card from './../../../shared/deck/card';
 
@@ -17,8 +15,8 @@ const Deck = {
     }
 };
 
-export function create() {
+export function create(seed) {
     let deck = Object.create(Deck);
-    deck.cards = _.shuffle(cards);
+    deck.cards = shuffleseed.shuffle(cards, seed);
     return deck;
 }
